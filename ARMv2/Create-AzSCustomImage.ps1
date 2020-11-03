@@ -1,7 +1,7 @@
 #Create Storage account and SAS token
 #Create VM E8 Run following script to download, extract, convert and upload vhd file to SA
 
-Install-WindowsFeature Hyper-V -IncludeManagementTools -Restart
+# Install-WindowsFeature Hyper-V -IncludeManagementTools -Restart
 
 $defaultLocalPath = "C:\AzureStackOnAzureVM"
 $versionContainerName = "1910-58"
