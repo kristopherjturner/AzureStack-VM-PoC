@@ -23,8 +23,9 @@ do {
 $templateParameterObject = @{
     adminPassword = $adminPassword
     publicDnsName = $publicDnsName
-    dataDiskCount = 6
+    dataDiskCount = 8
     osDiskVhdUri = $sa.PrimaryEndpoints.Blob + "vhd/cloudbuilder.vhd"
+    virtualMachineSize = Standard_E64s_v3
 }
 New-AzResourceGroupDeployment -ResourceGroupName $rg -Name AzureStackonAzureVM -TemplateUri "https://github.com/kristopherjturner/AzureStack-VM-PoC/blob/master/CCB/azuredeploy.json" -TemplateParameterObject $templateParameterObject
 
