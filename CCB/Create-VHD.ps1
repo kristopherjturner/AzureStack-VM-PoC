@@ -1,5 +1,6 @@
 Connect-AzAccount -Subscription "Turner-CET-Azure"
 
+# Customizable Parameters
 $adminPassword = Get-Credential -Credential "Local Admin Password"
 $publicDnsName = Read-Host -Prompt "Public DNS prefix"
 $region = 'WEST US 2'
@@ -18,14 +19,14 @@ do {
     Write-Verbose -Message "Waiting copy to finish remaining $remaining GB" -Verbose 
 } until ($result.Status -eq "success") 
 
-
+#  Add ParameterObjects
 $templateParameterObject = @{
     adminPassword = $adminPassword
     publicDnsName = $publicDnsName
     dataDiskCount = 6
     osDiskVhdUri = $sa.PrimaryEndpoints.Blob + "vhd/cloudbuilder.vhd"
 }
-New-AzResourceGroupDeployment -ResourceGroupName $rg -Name AzureStackonAzureVM -TemplateUri "https://raw.githubusercontent.com/yagmurs/AzureStack-VM-PoC/development/ARMv2/azuredeploy.json" -TemplateParameterObject $templateParameterObject
+New-AzResourceGroupDeployment -ResourceGroupName $rg -Name AzureStackonAzureVM -TemplateUri "https://github.com/kristopherjturner/AzureStack-VM-PoC/blob/master/CCB/azuredeploy.json" -TemplateParameterObject $templateParameterObject
 
 #region 1
 #region 2

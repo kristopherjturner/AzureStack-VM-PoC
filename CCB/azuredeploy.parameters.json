@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "location": {
-            "value": "westeurope"
+            "value": "westus2"
         },
         "virtualMachineName": {
             "value": "AzureStack-H1"
         },
         "virtualMachineSize": {
-            "value": "Standard_E16s_v3"
+            "value": "Standard_E64s_v3"
         },
         "adminUsername": {
-            "value": "<Username>"
+            "value": "administrator"
         },
         "adminPassword": {
-            "value": "GEN-PASSWORD"
+            "value": "!AzureStack!"
         },
         "virtualNetworkName": {
             "value": "AzureStack-VNET"
@@ -36,7 +36,7 @@
             "value": "Dynamic"
         },
         "autoShutdownStatus": {
-            "value": "Enabled"
+            "value": "Disabled"
         },
         "autoShutdownTime": {
             "value": "23:00"
@@ -48,7 +48,7 @@
             "value": "Disabled"
         },
         "publicDnsName": {
-            "value": "azstacktest"
+            "value": "ashasdkwest"
         }
     }
 }
